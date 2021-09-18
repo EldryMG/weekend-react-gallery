@@ -9,8 +9,11 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 [x] Get pics, resize them to an appropriate size.
 [x] Modify `server/modules/data.js` to include an `id`, `title`, `description` and `path for`.
 [x] Complete setup with `npm install nodemon --global`, npm, and axios.
-[] Complete client-side GET route.
-[] Append data to the DOM.
+[x] Complete client-side GET route.
+[x] Append data to the DOM.
+    - [x] Added description to each picture.
+    - [x] Added a button to each picture.
+        - [] Add a counter to the button.
 [] Complete Client-side PUT.
 
 [] To practice passing values through `props` in React, you will build the gallery using mulitple components - an `App`, `GalleryList`, and `GalleryItem`.

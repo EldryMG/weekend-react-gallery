@@ -16,7 +16,7 @@ function App() {
       // response.data is what we sent from the server
       //axios has an object as a response with .data being
       //what we sent from the server.
-      console.log('This is GET request data,',response.data);
+      console.log('This is GET request data,', response.data);
       setPics(response.data);
     }).catch((error) => {
       console.log(error);
@@ -28,18 +28,27 @@ function App() {
     getPicsData();
   }, []);
 
-    return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Gallery of My Life</h1>
-        </header>
-        <p>Gallery goes here</p>
-          <div class="container">
-              {pics.map(apic =>
-                (<div class="container"><img src={apic.path}/></div>))}
-          </div> 
-        </div>
-     );
+  return (
+    <div className="App">
+      <header className="App-header">
+        <h1 className="App-title">Gallery of My Life</h1>
+      </header>
+      <p>Gallery goes here</p>
+      <div class="container">
+        {pics.map(apic =>
+        (<div class="picture-wrapper">
+          <img src={apic.path} />
+          <div class="description">
+            {apic.description}
+          </div>
+          <div class="button">
+            <button>Love It</button>
+          </div>
+
+        </div>))}
+      </div>
+    </div>
+  );
 }
 
 export default App;
