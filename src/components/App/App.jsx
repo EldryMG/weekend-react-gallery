@@ -1,4 +1,7 @@
+import axios from 'axios';
 import React from 'react';
+import { useState, useEffect } from 'react';
+import Header from '../Header/Header.jsx'
 import './App.css';
 
 function App() {
@@ -12,24 +15,8 @@ function App() {
         <div class="wrapper">
           <img class="picture" src="images/goat_small.jpg"></img>
           <h4 class="subtitle">Subtitle goes here</h4>
-        </div>
-        <div class="wrapper">
-          <img class="picture" src="images/goat_small.jpg"></img>
-          <h4 class="subtitle">Subtitle goes here</h4>
-        </div>
-        <div class="wrapper">
-          <img class="picture" src="images/goat_small.jpg"></img>
-          <h4 class="subtitle">Subtitle goes here</h4>
-        </div>
-        <div class="wrapper">
-          <img class="picture" src="images/goat_small.jpg"></img>
-          <h4 class="subtitle">Subtitle goes here</h4>
-        </div>
-        <div class="wrapper">
-          <img class="picture" src="images/goat_small.jpg"></img>
-          <h4 class="subtitle">Subtitle goes here</h4>
+          </div>
         </div> 
-      </div>
       </div>
     );
 }

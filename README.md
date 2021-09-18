@@ -7,8 +7,8 @@ Your project description goes here. What problem did you solve? How did you solv
 Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
 
 [x] Get pics, resize them to an appropriate size.
-[] Modify `server/modules/data.js` to include an `id`, `title`, `description` and `path for`.
-[] Complete setup with `npm install nodemon --global`, npm, and axios.
+[x] Modify `server/modules/data.js` to include an `id`, `title`, `description` and `path for`.
+[x] Complete setup with `npm install nodemon --global`, npm, and axios.
 [] Complete client-side GET route.
 [] Append data to the DOM.
 [] Complete Client-side PUT.
