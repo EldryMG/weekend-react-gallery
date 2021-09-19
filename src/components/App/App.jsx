@@ -1,17 +1,14 @@
 import axios from 'axios';
 import React from 'react';
 import { useState, useEffect } from 'react';
-//import galleryItems from '../../../server/modules/gallery.data';
-//import d from '../../../server/modules/gallery.data';
 import './App.css';
 
-// It looks like you're sourcing in the data instead of making a GET request. 
-//You should be using GET and PUT for the data, it shouldn't be sourced directly in the client.
 
 
 
 function App() {
   const [pics, setPics] = useState([]); 
+  const [picToggle, setPicToggle] = useState(false);
 
   const getPicsData = () => {
     axios({
@@ -61,9 +58,8 @@ function App() {
         {pics.map(apic =>
         (<div class="picture-wrapper" key={apic.id}>
           <img src={apic.path} />
-          <div class="description">
-            {apic.description}
-          </div>
+          {picToggle ?  <div class="description">{apic.description}</div> 
+                    : <button onClick={() => setPicToggle(true)}>Description</button>}
           <div class="button">
             <button onClick={() => handleLike(apic.id)}>Love It</button>
             <p>{apic.likes}</p>

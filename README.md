@@ -13,8 +13,10 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 [x] Append data to the DOM.
     - [x] Added description to each picture.
     - [x] Added a button to each picture.
-        - [] Add a counter to the button.
-[] Complete Client-side PUT.
+        - [x] Add a counter to the button.
+[x] Complete Client-side PUT.
+[] Watch instructions on ternary operators.
+[] Complete conditional rendering of description.
 
 [] To practice passing values through `props` in React, you will build the gallery using mulitple components - an `App`, `GalleryList`, and `GalleryItem`.
     - `App` - represents the overall application or site 
