@@ -3,7 +3,7 @@ const router = express.Router();
 const galleryItems = require('../modules/gallery.data');
 
 // DO NOT MODIFY THIS FILE FOR BASE MODE
-
+//Removed 'like' from the URL..
 // PUT Route
 router.put('/like/:id', (req, res) => {
     console.log(req.params);

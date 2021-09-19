@@ -1,12 +1,17 @@
 import axios from 'axios';
 import React from 'react';
 import { useState, useEffect } from 'react';
+//import galleryItems from '../../../server/modules/gallery.data';
+//import d from '../../../server/modules/gallery.data';
 import './App.css';
+
+// It looks like you're sourcing in the data instead of making a GET request. 
+//You should be using GET and PUT for the data, it shouldn't be sourced directly in the client.
 
 
 
 function App() {
-  const [pics, setPics] = useState([]); //These names I'm choosing are making me nervous.
+  const [pics, setPics] = useState([]); 
 
   const getPicsData = () => {
     axios({
@@ -21,8 +26,26 @@ function App() {
     }).catch((error) => {
       console.log(error);
       alert('Error making GET request.');
+    });
+  }
+
+
+  const plusLike = (thing) => {
+    console.log('in plusLike', thing);
+    axios({
+      method: 'PUT',
+      url: `/gallery/like/${thing}`,
+    }).then((response) => {
+      getPicsData();
+    }).catch((error) => {
+      alert('Error in handleLike');
+      console.log(error);
     })
   }
+  const handleLike = (thing) => {
+    console.log('in handleLike', thing);
+    plusLike(thing);
+}
 
   useEffect(() => {
     getPicsData();
@@ -36,13 +59,14 @@ function App() {
       <p>Gallery goes here</p>
       <div class="container">
         {pics.map(apic =>
-        (<div class="picture-wrapper">
+        (<div class="picture-wrapper" key={apic.id}>
           <img src={apic.path} />
           <div class="description">
             {apic.description}
           </div>
           <div class="button">
-            <button>Love It</button>
+            <button onClick={() => handleLike(apic.id)}>Love It</button>
+            <p>{apic.likes}</p>
           </div>
 
         </div>))}
