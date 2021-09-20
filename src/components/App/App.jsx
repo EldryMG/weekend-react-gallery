@@ -2,22 +2,20 @@ import axios from 'axios';
 import React from 'react';
 import { useState, useEffect } from 'react';
 import './App.css';
+import GalleryList from './GalleryList/GalleryList.jsx';
 
 
 
 
 function App() {
   const [pics, setPics] = useState([]); 
-  const [picToggle, setPicToggle] = useState(false);
+
 
   const getPicsData = () => {
     axios({
       method: 'GET',
       url: '/gallery',
     }).then((response) => {
-      // response.data is what we sent from the server
-      //axios has an object as a response with .data being
-      //what we sent from the server.
       console.log('This is GET request data,', response.data);
       setPics(response.data);
     }).catch((error) => {
@@ -27,7 +25,7 @@ function App() {
   }
 
 
-  const plusLike = (thing) => {
+const plusLike = (thing) => {
     console.log('in plusLike', thing);
     axios({
       method: 'PUT',
@@ -39,10 +37,6 @@ function App() {
       console.log(error);
     })
   }
-  const handleLike = (thing) => {
-    console.log('in handleLike', thing);
-    plusLike(thing);
-}
 
   useEffect(() => {
     getPicsData();
@@ -54,18 +48,10 @@ function App() {
         <h1 className="App-title">Gallery of My Life</h1>
       </header>
       <p>Gallery goes here</p>
-      <div class="container">
-        {pics.map(apic =>
-        (<div class="picture-wrapper" key={apic.id}>
-          <img src={apic.path} />
-          {picToggle ?  <div class="description">{apic.description}</div> 
-                    : <button onClick={() => setPicToggle(true)}>Description</button>}
-          <div class="button">
-            <button onClick={() => handleLike(apic.id)}>Love It</button>
-            <p>{apic.likes}</p>
-          </div>
-
-        </div>))}
+      <div className="container">
+      <GalleryList 
+      plusLike={plusLike}
+      pics={pics}/>
       </div>
     </div>
   );
