@@ -2,6 +2,7 @@ import GalleryItem from "../GalleryItem/GalleryItem";
 import { useState } from 'react';
 import React from 'react';
 import axios from 'axios';
+import './GalleryList.css';
 
 function GalleryList({pics, plusLike}) {
     return (
