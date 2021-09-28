@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { FaHeart } from "react-icons/fa";
 
 
 function GalleryItem({ pic, plusLike}) {
@@ -24,7 +25,7 @@ function GalleryItem({ pic, plusLike}) {
 
 
                 <div className="button">
-                    <button onClick={() => handleLike(pic.id)}>Love It</button>
+                    <button onClick={() => handleLike(pic.id)}><FaHeart color="red" /></button>
                     <p>{pic.likes}</p>
                 </div>
             </div>
