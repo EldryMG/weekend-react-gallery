@@ -13,7 +13,7 @@ function GalleryItem({ pic, plusLike}) {
 
     return (
 
-        <div className="container" >
+        <div >
             <div key={pic.id}>
                 {
                     picToggle

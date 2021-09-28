@@ -4,17 +4,19 @@ import React from 'react';
 import axios from 'axios';
 import './GalleryList.css';
 
-function GalleryList({pics, plusLike}) {
+function GalleryList({ pics, plusLike }) {
     return (
-        <ul className="container">
-            {pics.map(apic => (
-            <GalleryItem 
-                key={apic.id}
-                pic={apic}
-                plusLike={plusLike}
-            />
-            ))}
-       </ul> 
+        <div>
+            <ul className="container">
+                {pics.map(apic => (
+                    <GalleryItem
+                        key={apic.id}
+                        pic={apic}
+                        plusLike={plusLike}
+                    />
+                ))}
+            </ul>
+        </div>
     );
 }
 

@@ -3,7 +3,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import './App.css';
 import GalleryList from './GalleryList/GalleryList.jsx';
-import { GiFlatHammer, GiAxeSword } from "react-icons/gi";
+import { GiFlatHammer, GiAxeSword, GiCrossShield } from "react-icons/gi";
 
 
 
@@ -48,15 +48,14 @@ const plusLike = (thing) => {
       <header className="App-header">
         <h1 className="App-title">Gallery of My Life</h1>
       </header>
-      <p>Gallery goes here</p>
-      <div className="container">
+      <div>
       <GalleryList 
       plusLike={plusLike}
       pics={pics}/>
       </div>
       <footer>
-        <p id="copyrightLine"><GiAxeSword size="1.5em"/>Project by: Franck Bushbaum (<a href="mailto:franck.bushbaum@yahoo.com">Email</a> | 
-        <a href="https://github.com/EldryMG" target="_blank">Github</a>)<GiAxeSword size="1.5em"/></p>
+        <p id="copyrightLine"><GiCrossShield size="1.5em"/>Project by: Franck Bushbaum (<a href="mailto:franck.bushbaum@yahoo.com">Email</a> | 
+        <a href="https://github.com/EldryMG" target="_blank">Github</a>)<GiCrossShield size="1.5em"/></p>
         </footer>
     </div>
   );
